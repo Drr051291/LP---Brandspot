@@ -75,43 +75,43 @@
        Black = 900 | Bold = 700 | Light = 200
     ════════════════════════════════════════ */
     .hero {
-      padding: clamp(40px, 4.9vh, 50px) 24px clamp(60px, 7vw, 90px);
+      padding: clamp(28px, 3.5vh, 44px) 24px clamp(36px, 4.5vw, 60px);
       gap: 0;
     }
     /* Logo: 266×104px centrado, topo 50px no Figma */
     .hero-logo {
-      height: clamp(72px, 10.2vh, 104px);
+      height: clamp(56px, 7vh, 88px);
       width: auto;
-      margin-bottom: clamp(40px, 8vh, 72px);
+      margin-bottom: clamp(20px, 3.5vh, 40px);
     }
     /* Kicker "Diagnóstico gratuito": 26px Black #028384 */
     .hero-kicker {
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 900;
-      font-size: clamp(15px, 1.8vw, 26px);
+      font-size: clamp(13px, 1.4vw, 20px);
       color: var(--teal);
       letter-spacing: normal;
-      margin-bottom: clamp(16px, 2.3vh, 26px);
+      margin-bottom: clamp(10px, 1.6vh, 18px);
     }
     /* Headline: 62px Black #f5f5f5 line-height 0.92 */
     .hero-title {
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 900;
-      font-size: clamp(28px, 4.3vw, 62px);
+      font-size: clamp(26px, 3.8vw, 56px);
       line-height: 0.92;
-      max-width: 900px;
-      margin-bottom: clamp(18px, 2.6vh, 34px);
+      max-width: 860px;
+      margin-bottom: clamp(14px, 2vh, 26px);
       letter-spacing: -0.01em;
     }
     /* Subtext: 26px Light (#f5f5f5) com trechos Black  */
     .hero-sub {
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 200;
-      font-size: clamp(15px, 1.8vw, 26px);
-      line-height: 1.2;
+      font-size: clamp(13px, 1.4vw, 20px);
+      line-height: 1.3;
       color: rgba(245,245,245,0.9);
-      max-width: clamp(300px, 52vw, 750px);
-      margin-bottom: clamp(36px, 5vh, 64px);
+      max-width: clamp(280px, 46vw, 660px);
+      margin-bottom: clamp(24px, 3.5vh, 48px);
     }
     /* +R$100mil e 40% são Black no Figma */
     .hero-sub strong {
@@ -119,17 +119,17 @@
       color: var(--text);
     }
 
-    .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: clamp(50px, 7vh, 90px); }
+    .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: clamp(36px, 5vh, 64px); }
 
-    /* Botão CTA: 441×79px radius 39px, texto 30px Black */
+    /* Botão CTA */
     .btn-main {
       display: inline-flex; align-items: center; justify-content: center;
       background: var(--teal); color: var(--text);
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 900;
-      font-size: clamp(16px, 2.1vw, 30px);
-      padding: clamp(16px, 2.8vh, 24px) clamp(32px, 2.8vw, 52px);
-      max-width: 441px; width: 100%;
+      font-size: clamp(14px, 1.5vw, 22px);
+      padding: clamp(13px, 1.8vh, 20px) clamp(28px, 2.4vw, 48px);
+      max-width: 380px; width: 100%;
       border-radius: 100px; border: none;
       cursor: pointer; transition: background .2s, transform .15s;
       text-decoration: none; white-space: nowrap;
@@ -137,40 +137,40 @@
     .btn-main:hover  { background: #029e9f; transform: translateY(-2px); }
     .btn-main:active { transform: translateY(0); }
 
-    /* Badge "Leva só 2 min": 223×60px bg #f5f5f5, texto 20px Black #0f1729 */
+    /* Badge "Leva só 2 min" */
     .badge-time {
-      display: inline-flex; align-items: center; gap: 10px;
+      display: inline-flex; align-items: center; gap: 8px;
       background: #f5f5f5;
       color: #0f1729;
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 900;
-      font-size: clamp(13px, 1.4vw, 20px);
-      padding: clamp(10px, 3vh, 18px) clamp(20px, 1.6vw, 30px);
+      font-size: clamp(11px, 1.1vw, 16px);
+      padding: clamp(8px, 1.2vh, 13px) clamp(14px, 1.2vw, 22px);
       border-radius: 100px;
       white-space: nowrap;
     }
-    .badge-time img { width: clamp(18px, 1.4vw, 24px); height: clamp(18px, 1.4vw, 24px); flex-shrink: 0; object-fit: contain; opacity: 1; }
+    .badge-time img { width: clamp(14px, 1.1vw, 19px); height: clamp(14px, 1.1vw, 19px); flex-shrink: 0; object-fit: contain; opacity: 1; }
 
-    /* Ícones rodapé: Bold 700, 25px no Figma */
+    /* Ícones rodapé */
     .hero-icons {
       display: flex; justify-content: center; flex-wrap: wrap;
-      gap: clamp(24px, 3.3vw, 60px); max-width: 900px;
+      gap: clamp(20px, 2.8vw, 52px); max-width: 860px;
     }
     .hero-icon {
       display: flex; flex-direction: column; align-items: center;
-      gap: 14px; text-align: center;
+      gap: 10px; text-align: center;
     }
     .hero-icon img {
-      width: clamp(46px, 3.9vw, 72px);
-      height: clamp(46px, 3.9vw, 72px);
+      width: clamp(38px, 3.2vw, 58px);
+      height: clamp(38px, 3.2vw, 58px);
       object-fit: contain; opacity: 0.9;
     }
     .hero-icon span {
       font-family: 'cofo-gothic-variable', sans-serif;
       font-weight: 700;
-      font-size: clamp(13px, 1.7vw, 25px);
+      font-size: clamp(11px, 1.3vw, 19px);
       color: #f5f5f5;
-      max-width: 130px; line-height: 0.9;
+      max-width: 110px; line-height: 1;
     }
 
     /* ════════════════════════════════════════
