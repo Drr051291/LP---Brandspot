@@ -82,6 +82,7 @@
     .hero-logo {
       height: clamp(72px, 10.2vh, 104px);
       width: auto;
+      max-width: min(266px, 80vw);
       margin-bottom: clamp(40px, 8vh, 72px);
     }
     /* Kicker "Diagnóstico gratuito": 26px Black #028384 */
@@ -148,7 +149,7 @@
       border-radius: 100px;
       white-space: nowrap;
     }
-    .badge-time img { width: clamp(18px, 1.4vw, 26px); opacity: 1; }
+    .badge-time img { width: clamp(18px, 1.4vw, 26px); height: auto; opacity: 1; }
 
     /* Ícones rodapé: Bold 700, 25px no Figma */
     .hero-icons {
@@ -699,24 +700,24 @@ function showLanding() {
       <div class="hero-cta delay-4 fade-up">
         <button class="btn-main" onclick="startQuiz()">Fazer diagnóstico gratuito</button>
         <div class="badge-time">
-          <img src="assets/icon-clock.png" alt=""> Leva só 2 min
+          <img src="assets/icon-clock.svg" alt=""> Leva só 2 min
         </div>
       </div>
       <div class="hero-icons delay-5 fade-up">
         <div class="hero-icon">
-          <img src="assets/icon-empresa.png" alt="">
+          <img src="assets/icon-empresa.svg" alt="">
           <span>Montado na sua empresa</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-mensal.png" alt="">
+          <img src="assets/icon-mensal.svg" alt="">
           <span>Valor fixo mensal</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-economico.png" alt="">
+          <img src="assets/icon-economico.svg" alt="">
           <span>Quanto mais usa, mais econômico</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-produza.png" alt="">
+          <img src="assets/icon-produza.svg" alt="">
           <span>Produza o quanto quiser, 24/7</span>
         </div>
       </div>
