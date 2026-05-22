@@ -452,10 +452,6 @@
 <div id="app"></div>
 
 <script>
-/* ══════════════════════════════════════════════════════════════
-   DATA
-══════════════════════════════════════════════════════════════ */
-
 const QUESTIONS = [
   {
     id: 'volume',
@@ -636,20 +632,12 @@ const INSIGHTS = {
   },
 };
 
-/* ══════════════════════════════════════════════════════════════
-   STATE
-══════════════════════════════════════════════════════════════ */
-
 const state = {
   screen:   'landing',
   qIndex:   0,
-  answers:  [],   // [{ id, optIdx, score }]
+  answers:  [],
   user:     {},
 };
-
-/* ══════════════════════════════════════════════════════════════
-   RENDERER
-══════════════════════════════════════════════════════════════ */
 
 function go(html, instant) {
   const app = document.getElementById('app');
@@ -678,10 +666,6 @@ function onRendered() {
   }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   SCREENS
-══════════════════════════════════════════════════════════════ */
-
 function showLanding() {
   state.screen = 'landing';
   go(`
@@ -699,24 +683,24 @@ function showLanding() {
       <div class="hero-cta delay-4 fade-up">
         <button class="btn-main" onclick="startQuiz()">Fazer diagnóstico gratuito</button>
         <div class="badge-time">
-          <img src="assets/icon-clock.png" alt=""> Leva só 2 min
+          <img src="assets/icon-clock.svg" alt=""> Leva só 2 min
         </div>
       </div>
       <div class="hero-icons delay-5 fade-up">
         <div class="hero-icon">
-          <img src="assets/icon-empresa.png" alt="">
+          <img src="assets/icon-empresa.svg" alt="">
           <span>Montado na sua empresa</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-mensal.png" alt="">
+          <img src="assets/icon-mensal.svg" alt="">
           <span>Valor fixo mensal</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-economico.png" alt="">
+          <img src="assets/icon-economico.svg" alt="">
           <span>Quanto mais usa, mais econômico</span>
         </div>
         <div class="hero-icon">
-          <img src="assets/icon-produza.png" alt="">
+          <img src="assets/icon-produza.svg" alt="">
           <span>Produza o quanto quiser, 24/7</span>
         </div>
       </div>
@@ -825,7 +809,6 @@ function showResults() {
   const profile = PROFILES.find(p => total >= p.range[0] && total <= p.range[1]) || PROFILES[2];
   const fname   = (state.user.name || '').split(' ')[0];
 
-  /* Dimensions */
   const dimMap = {};
   QUESTIONS.forEach((q, i) => {
     if (!dimMap[q.dim]) dimMap[q.dim] = { s: 0, m: 0 };
@@ -842,7 +825,6 @@ function showResults() {
       </div>`;
   }).join('');
 
-  /* Insights: top 2 high-score + 1 low-score */
   const ranked = state.answers
     .map((a, i) => ({ id: QUESTIONS[i].id, score: a.score }))
     .sort((a, b) => b.score - a.score);
@@ -862,7 +844,6 @@ function showResults() {
     </div>
   `).join('');
 
-  /* SVG gauge */
   const R   = 70;
   const C   = +(2 * Math.PI * R).toFixed(2);
   const off = +(C - (pct / 100) * C).toFixed(2);
@@ -886,7 +867,6 @@ function showResults() {
           </h2>
         </div>
 
-        <!-- Score card -->
         <div class="score-card fade-up delay-2">
           <div class="gauge-wrap">
             <svg viewBox="0 0 160 160">
@@ -911,19 +891,16 @@ function showResults() {
           </div>
         </div>
 
-        <!-- Dimensions -->
         <div class="section-card fade-up delay-3">
           <p class="section-label">Análise por dimensão</p>
           ${dimRows}
         </div>
 
-        <!-- Insights -->
         <div class="section-card fade-up delay-4">
           <p class="section-label">Principais insights</p>
           ${insightsHtml}
         </div>
 
-        <!-- CTA -->
         <div class="cta-box fade-up delay-5">
           <h3>O que fazer com esse resultado?</h3>
           <p>Converse com um especialista Brandspot e descubra como um estúdio dedicado funcionaria dentro da sua operação — com números reais.</p>
@@ -946,10 +923,6 @@ function showResults() {
     </section>
   `);
 }
-
-/* ══════════════════════════════════════════════════════════════
-   ACTIONS
-══════════════════════════════════════════════════════════════ */
 
 function startQuiz() {
   state.qIndex  = 0;
@@ -1054,7 +1027,6 @@ async function downloadPDF() {
   }
 }
 
-/* ── Boot ── */
 showLanding();
 </script>
 </body>
